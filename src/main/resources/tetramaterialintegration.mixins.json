@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "github.pitbox46.tetramaterialintegration.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "tetramaterialintegration.refmap.json",
+  "mixins": [
+    "ConfigSchematicMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

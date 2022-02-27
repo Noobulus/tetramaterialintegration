@@ -1,0 +1,10 @@
+{
+  "tconstruct:basalt": "minecraft:basalt",
+  "tconstruct:blackstone": "minecraft:blackstone",
+  "tconstruct:bone": "minecraft:bone",
+  "tconstruct:endstone": "minecraft:end_stone",
+  "tconstruct:flint": "minecraft:flint",
+  "tconstruct:iron": "minecraft:iron_ingot",
+  "tconstruct:stone": "minecraft:stone",
+  "tconstruct:wood": "minecraft:oak_planks"
+}
