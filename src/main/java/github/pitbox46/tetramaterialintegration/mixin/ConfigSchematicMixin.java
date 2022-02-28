@@ -50,8 +50,9 @@ public class ConfigSchematicMixin {
         }
 
         String mat = stack.hasTag() ? stack.getOrCreateTag().getString(Config.materialTagName) : "";
-        if(mat.startsWith("tconstruct:"))
-            mat = Config.tConstructMatCompat.get(mat);
+        if(mat.startsWith("tconstruct:")) {
+            mat = Config.tConstructMatCompat.getOrDefault(mat, mat);
+        }
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(mat));
     }
 }
