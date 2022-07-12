@@ -1,10 +1,10 @@
 package github.pitbox46.tetramaterialintegration.mixin;
 
 import github.pitbox46.tetramaterialintegration.Config;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -37,7 +37,7 @@ public class ConfigSchematicMixin {
                             return stack.getItem().equals(getTetraMaterial(materialStack));
                         });
             }
-            return outcome.material.getPredicate() != null && outcome.material.getPredicate().test(materialStack);
+            return outcome.material.getPredicate() != null && outcome.material.getPredicate().matches(materialStack);
         }).reduce((a, b) -> {
             return b;
         }));
