@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import net.minecraft.world.storage.FolderName;
+import net.minecraft.world.level.storage.LevelResource;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.loading.FMLConfig;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.fml.loading.FileUtils;
@@ -32,8 +32,8 @@ public class Config {
     public static Map<String, String> tConstructMatCompat = new HashMap<>();
 
     @SubscribeEvent
-    public static void onServerStarting(FMLServerStartingEvent event) {
-        Config.init(event.getServer().func_240776_a_(new FolderName("serverconfig")));
+    public static void onServerStarting(ServerStartingEvent event) {
+        Config.init(event.getServer().getWorldPath(new LevelResource("serverconfig")));
     }
 
     public static void init(Path folder) {
